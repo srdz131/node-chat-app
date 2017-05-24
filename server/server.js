@@ -20,6 +20,17 @@ io.on('connection', (socket)=>{
   socket.on('disconnect', ()=>{
     console.log('user disconnected')
   });
+
+
+  socket.emit('newMessage',{
+    from: 'john',
+    text: 'cena',
+    createdAt: 34242
+  })
+
+  socket.on('createMessage', (message)=>{
+    console.log('create message', message);
+  })
 });
 
 
