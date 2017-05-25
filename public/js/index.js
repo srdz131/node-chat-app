@@ -5,9 +5,10 @@ socket.on('connect', function(){
 });
 
 socket.on('newMessage', function(message){
+  var formatedTime = moment(message.createdAt).format('kk:mm');
   console.log('new message recived:',message);
   var li = jQuery('<li></li>');
-  li.text(`${message.from}: ${message.text}`);
+  li.text(`${message.from} ${formatedTime}: ${message.text}`);
 
   jQuery('#messages').append(li);
 });
@@ -24,7 +25,7 @@ jQuery('#message-form').on('submit', function(e){
     from: 'User',
     text: jQuery('[name=message]').val()
   }, function(){
-    
+
   });
   jQuery('[name=message]').val('')
 });
