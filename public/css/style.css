@@ -3,8 +3,9 @@
   font-family: 'Dancing Script';
   src : url('/fonts/DancingScript-Regular.ttf');
 }
-body{
-  background: #060210;
+@font-face {
+  font-family: 'Dancing Script-Bold';
+  src : url('/fonts/DancingScript-Bold.ttf');
 }
 .app-title{
   width:100%;
@@ -155,4 +156,49 @@ body{
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.8);
+}
+
+/* LOGIN PAGE CSS */
+
+.centered__form-form{
+  border: 2px solid black;
+  height: 400px;
+  min-width: 350px;
+  margin: auto;
+  background: #2E2E2E;
+  color: white;
+}
+.form-field{
+  display: flex;
+  flex-grow: 1;
+  height: 40px;
+  justify-content: flex-end;
+  padding: 2%;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 15px;
+}
+.form-field label{
+  flex: 1;
+  margin-top: 5px;
+  font-size: 20px;
+}
+.form-field input{
+  flex: 2;
+  padding: 10px;
+  border-radius: 0px;
+  border-style: hidden;
+  background: black;
+  color:white;
+}
+.form-field button {
+  background: white;
+  border-radius: 0px;
+  border-style: hidden;
+  height: 100%;
+  font-size: 2em;
+
+}
+.form-field h2{
+  font-family: 'Dancing Script-Bold', cursive;
 }

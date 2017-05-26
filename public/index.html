@@ -2,60 +2,31 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width: device-width, inital-scale=1, user-scalable=no">
+    <title>Welcome</title>
     <link rel="stylesheet" href="/css/style.css">
-    <title>Chat</title>
+
   </head>
-  <body>
-    <header class = "app-title">
-      <nav>
-        <h1>The Chat</h1>
-      </nav>
-    </header>
+  <body class="centered-form">
     <div class="flex-container">
-    <div class ="aside">
-      <header>
-        <h2>People</h2>
-      </header>
-      <main>
-        <ul>
-          <li>User</li>
-          <li>Admin</li>
-        </ul>
-      </main>
+    <div class = "centered__form-form">
+      <form action="/chat.html">
+      <div class="form-field">
+        <h2>Join a Chat</h2>
+      </div>
+      <div class="form-field">
+        <label>Display name</label>
+        <input type="text" name="name" autofocus placeholder="Enter your chat name here"/>
+      </div>
+      <div class="form-field">
+        <label>Room name</label>
+        <input type="text" name="room" placeholder="Enter room name"/>
+      </div>
+      <div class="form-field">
+        <button>Join</button>
+      </div>
+      </form>
     </div>
-    <div class="mainchat">
-      <div class="msg-cnt">
-    <ol id="messages">
-
-    </ol>
-  </div>
-    <footer>
-    <form id = "message-form">
-      <input type="text" name="message" placeholder="Enter message" autofocus autocomplete="off">
-      <button class="sendButton">Send</button>
-    </form>
-    </footer>
     </div>
-  </div>
-  <script id="message-template" type="text/template">
-  <li class = "message">
-    <div class = "message-title">
-      <h4>{{from}}:  </h4>
-    </div>
-    <div class="message-body">
-      <p>{{text}}</p>
-      <span>{{createdAt}}</span>
-    </div>
-  </li>
-  </script>
-
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/libs/jquery-3.2.1.min.js"></script>
-    <script src = "/js/libs/moment.js"></script>
-    <script src = "/js/libs/mustache.js"></script>
-
-    </script>
-    <script src="/js/index.js"></script>
-
   </body>
 </html>
