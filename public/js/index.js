@@ -6,11 +6,19 @@ socket.on('connect', function(){
 
 socket.on('newMessage', function(message){
   var formatedTime = moment(message.createdAt).format('kk:mm');
-  console.log('new message recived:',message);
-  var li = jQuery('<li></li>');
-  li.text(`${message.from} ${formatedTime}: ${message.text}`);
+  var template = jQuery('#message-template').html();
+  var html = Mustache.render(template, {
+    text: message.text,
+    from: message.from,
+    createdAt: formatedTime
+  });
 
-  jQuery('#messages').append(li);
+  jQuery('#messages').append(html)
+  // console.log('new message recived:',message);
+  // var li = jQuery('<li></li>');
+  // li.text(`${message.from} ${formatedTime}: ${message.text}`);
+  //
+  // jQuery('#messages').append(li);
 });
 
 

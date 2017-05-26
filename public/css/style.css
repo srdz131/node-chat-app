@@ -92,14 +92,13 @@ body{
 #messages {
   color: white;
   list-style-type: none;
-
 }
 #messages li{
   width: 250px;
   background: black;
-  padding: 5px;
-  margin-top: 5px;
   border: 1px solid black;
+  margin-bottom: 5px;
+  padding: 5px;
 }
 .mainchat footer{
   position: relative;
@@ -115,6 +114,34 @@ body{
 }
 #message-form button{
   height: 50px;
+}
+.message{
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  padding: 0px;
+}
+.message-body span {
+  flex-grow: 1;
+  display: block;
+  width: 100%;
+  text-align: right;
+  font-size: 12px;
+}
+.message-title {
+  flex-grow: 1;
+  height: 30px;
+  min-height: 30px;
+  display: block;
+  width: 100%;
+  margin-top: 0px;
+
+}
+.message-body{
+  flex-grow: 1;
+  display: block;
+  width: 100%;
 }
 
 ::-webkit-scrollbar {
